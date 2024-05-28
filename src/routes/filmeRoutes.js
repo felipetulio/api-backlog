@@ -2,11 +2,11 @@ import express from "express";
 import filmeController from "../controllers/filmeController.js";
 
 const router = express.Router();
-const novoFilme = new filmeController();
+const filme = new filmeController();
 
 router.get('/', (req, res) => {
     try {
-        novoFilme.BuscarTodosOsFilmes(req, res);
+        filme.BuscarTodosOsFilmes(req, res);
     }catch(err){
         res.status(500).json({ error: err.message });
     }
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     try {
-        novoFilme.BuscarFilmePorId(req, res);
+        filme.BuscarFilmePorId(req, res);
     }catch(err){
         res.status(500).json({ error: err.message });
     }
@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
-        novoFilme.CadastrarFilme(req, res);
+        filme.CadastrarFilme(req, res);
     }catch(err){
         res.status(500).json({ error: err.message });
     }
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     try {
-        novoFilme.AtualizarFilme(req, res);
+        filme.AtualizarFilme(req, res);
     }catch(err){
         res.status(500).json({ error: err.message });
     }
@@ -38,7 +38,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     try {
-        novoFilme.ExcluirFilme(req, res);
+        filme.ExcluirFilme(req, res);
     }catch(err){
         res.status(500).json({ error: err.message });
     }
