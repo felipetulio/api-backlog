@@ -1,12 +1,6 @@
 import filmeModel from "../models/filmeModel.js";
 
 export default class Filmes {
-  constructor(titulo, diretor, ano, genero) {
-    this.titulo = titulo;
-    this.diretor = diretor;
-    this.ano = ano;
-    this.genero = genero;
-  }
 
   async BuscarTodosOsFilmes (req, res) {
     try {
